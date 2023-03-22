@@ -1,4 +1,4 @@
-<h1 align="center">To-do 📜</h1>
+<h1 align="center">To-do List 📜</h1>
    
 <h3 align="center">Clique <a href="https://projects-gustavo.github.io/to-do/">aqui</a></h3>   
 <img src="assets/img/to-do.jpg">
