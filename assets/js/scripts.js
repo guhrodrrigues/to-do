@@ -66,6 +66,17 @@ if (inputElement)
     }
   });
 
+// Toastify
+const deleteTaskAlert = () => {
+  Toastify({
+    text: "Tarefa deletada!",
+    duration: 1500,
+    gravity: "bottom",
+    position: "center",
+    stopOnFocus: true,
+  }).showToast();
+};
+
 // Delete task
 const handleDeleteClick = (taskItemContainer, taskContent) => {
   // Get all tasks
@@ -76,6 +87,7 @@ const handleDeleteClick = (taskItemContainer, taskContent) => {
     const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent);
     if (currentTaskIsBeingClicked) {
       taskItemContainer.remove();
+      deleteTaskAlert();
     }
   }
 

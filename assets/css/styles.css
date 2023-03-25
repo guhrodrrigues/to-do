@@ -24,6 +24,16 @@ body {
   justify-content: center;
 }
 
+body .toastify {
+  background: var(--primary-color);
+  color: #000;
+  border-radius: 5px;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: none;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -179,7 +189,6 @@ h2 {
     transform: translateY(0);
   }
 }
-
 
 .completed {
   text-decoration: line-through;
