@@ -9,11 +9,12 @@ const validateInput = () => inputElement.value.trim().length > 0;
 const handleAddTask = () => {
   // Validate input
   const inputIsValid = validateInput();
-  addTaskAlert();
 
   // Validate input
   if (!inputIsValid) {
     return inputElement.classList.add("error");
+  } else {
+    addTaskAlert();
   }
 
   // Create elements
