@@ -9,6 +9,7 @@ const validateInput = () => inputElement.value.trim().length > 0;
 const handleAddTask = () => {
   // Validate input
   const inputIsValid = validateInput();
+  addTaskAlert();
 
   // Validate input
   if (!inputIsValid) {
@@ -67,9 +68,19 @@ if (inputElement)
   });
 
 // Toastify
+const addTaskAlert = () => {
+  Toastify({
+    text: "Tarefa adicionada ✔️",
+    duration: 1500,
+    gravity: "bottom",
+    position: "center",
+    stopOnFocus: true,
+  }).showToast();
+};
+
 const deleteTaskAlert = () => {
   Toastify({
-    text: "Tarefa deletada!",
+    text: "Tarefa deletada ❌",
     duration: 1500,
     gravity: "bottom",
     position: "center",
@@ -134,8 +145,7 @@ const refreshTasksUsingLocalStorage = () => {
 
     const taskContent = document.createElement("p");
     taskContent.innerText = task.description;
-    if (task.isCompleted) taskContent.classList.add("completed");
-
+    if (task.isCompleted === true) taskContent.classList.add("completed");
     taskContent.addEventListener("click", () => handleClick(taskContent));
 
     const deleteItem = document.createElement("i");
