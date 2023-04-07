@@ -25,13 +25,16 @@ body {
 }
 
 body .toastify {
-  background: var(--primary-color);
-  color: #000;
+  color: #fff;
   border-radius: 5px;
   padding: 12px;
   font-size: 1rem;
   font-weight: 500;
   box-shadow: none;
+}
+
+.teste {
+  background: pink;
 }
 
 ::-webkit-scrollbar {
@@ -58,9 +61,9 @@ body .toastify {
   animation: fade 0.6s ease;
 }
 
-h2 {
+h4 {
   color: var(--text-color);
-  font-weight: normal;
+  font-weight: 500;
 }
 
 .new-task-container {
@@ -72,7 +75,7 @@ h2 {
 }
 
 .new-task-container input {
-  width: 60%;
+  width: 100%;
   max-width: 350px;
   font-size: 1rem;
   border: 2px solid transparent;
@@ -110,13 +113,13 @@ h2 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 5px 20px;
+  padding: 0px 20px;
 }
 
 .task-item {
   display: flex;
   width: 100%;
-  max-width: 418px;
+  max-width: 463px;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 15px;
@@ -141,6 +144,16 @@ h2 {
 .task-item i:hover {
   cursor: pointer;
   background-color: var(--secondary-color);
+}
+
+.menu-day {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  padding: 1rem;
+  background-color: var(--bg-secondary);
 }
 
 /* Utilities */

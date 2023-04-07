@@ -1,11 +1,61 @@
-// Consts
+// Query selectors
 const inputElement = document.querySelector(".new-task-input");
 const addTaskButton = document.querySelector(".new-task-button");
 const tasksContainer = document.querySelector(".tasks-container");
+const today = document.querySelector("#today");
+
+// Get current date
+let day = new Date();
+
+// Get days of the week
+let daysOfTheWeek = [
+  "Domingo",
+  "Segunda",
+  "Terça",
+  "Quarta",
+  "Quinta",
+  "Sexta",
+  "Sábado",
+];
+
+// Get months
+let month = [
+  "Janeiro",
+  "Fevereiro",
+  "Março",
+  "Abril",
+  "Maio",
+  "Junho",
+  "Julho",
+  "Agosto",
+  "Setembro",
+  "Outubro",
+  "Novembro",
+  "Dezembro",
+];
+
+// Get week
+let week = daysOfTheWeek[day.getDay()];
+
+// Get date
+let currentDate = day.getDate();
+
+// Get month
+let currentMonth = month[day.getMonth()];
+
+// Get year
+let year = day.getFullYear();
+
+// Get full date
+let fullDate = `${week}, ${currentDate} de ${currentMonth} de ${year}`;
+
+// Set date
+today.innerHTML = fullDate;
 
 // Functions
 const validateInput = () => inputElement.value.trim().length > 0;
 
+// Add task
 const handleAddTask = () => {
   // Validate input
   const inputIsValid = validateInput();
@@ -71,21 +121,23 @@ if (inputElement)
 // Toastify
 const addTaskAlert = () => {
   Toastify({
-    text: "Tarefa adicionada ✔️",
+    text: "Tarefa adicionada",
     duration: 1500,
-    gravity: "bottom",
-    position: "center",
+    gravity: "top",
+    position: "right",
     stopOnFocus: true,
+    backgroundColor: "#008000",
   }).showToast();
 };
 
 const deleteTaskAlert = () => {
   Toastify({
-    text: "Tarefa deletada ❌",
+    text: "Tarefa deletada",
     duration: 1500,
-    gravity: "bottom",
-    position: "center",
+    gravity: "top",
+    position: "right",
     stopOnFocus: true,
+    backgroundColor: "#ff0000",
   }).showToast();
 };
 
