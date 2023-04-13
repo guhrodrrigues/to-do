@@ -146,16 +146,6 @@ h4 {
   background-color: var(--secondary-color);
 }
 
-.menu-day {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  padding: 1rem;
-  background-color: var(--bg-secondary);
-}
-
 /* Utilities */
 .error {
   border: 2px solid var(--error-color) !important;
