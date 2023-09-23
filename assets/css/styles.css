@@ -38,13 +38,13 @@ body .toastify {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
   border: 3.5px solid var(--bg-primary);
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 /* To-do */
@@ -114,6 +114,9 @@ h4 {
   justify-content: center;
   flex-direction: column;
   padding: 0px 20px;
+  overflow: auto;
+  max-height: 500px;
+  height: 100%;
 }
 
 .task-item {
