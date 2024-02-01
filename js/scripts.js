@@ -1,12 +1,9 @@
-// Query selectors
 const inputElement = document.querySelector(".new-task-input");
 const addTaskButton = document.querySelector(".new-task-button");
 const tasksContainer = document.querySelector(".tasks-container");
 
-// Functions
 const validateInput = () => inputElement.value.trim().length > 0;
 
-// Add task
 const handleAddTask = () => {
   // Validate input
   const inputIsValid = validateInput();
@@ -92,7 +89,6 @@ const deleteTaskAlert = () => {
   }).showToast();
 };
 
-// Delete task
 const handleDeleteClick = (taskItemContainer, taskContent) => {
   // Get all tasks
   const tasks = tasksContainer.childNodes;
