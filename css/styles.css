@@ -14,6 +14,8 @@
   --secondary-color: #cb7845;
   --text-color: #fff;
   --error-color: #ff0000;
+  --container-radius: 15px;
+  --radius: 7px;
 }
 
 body {
@@ -26,7 +28,7 @@ body {
 
 body .toastify {
   color: #fff;
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 12px;
   font-size: 1rem;
   font-weight: 500;
@@ -44,16 +46,17 @@ body .toastify {
 ::-webkit-scrollbar-thumb {
   background: var(--primary-color);
   border: 3.5px solid var(--bg-primary);
-  border-radius: 5px;
+  border-radius: var(--radius);
 }
 
 /* To-do */
 .container {
-  width: 30%;
   padding: 30px 15px;
-  border-radius: 15px;
+  border-radius: var(--container-radius);
   min-height: 600px;
-  min-width: 310px;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 1.5rem;
   background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
@@ -70,8 +73,12 @@ h4 {
   padding: 30px 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
   user-select: none;
+  gap: 0.7rem;
+
+  @media (max-width: 370px) {
+    flex-direction: column;
+  }
 }
 
 .new-task-container input {
@@ -81,7 +88,7 @@ h4 {
   border: 2px solid transparent;
   background: var(--bg-third);
   color: var(--text-color);
-  border-radius: 5px;
+  border-radius: var(--radius);
   padding: 12px;
   font-weight: 500;
 }
@@ -92,16 +99,20 @@ h4 {
 }
 
 .new-task-button {
-  border-radius: 5px;
+  border-radius: var(--radius);
   font-weight: 500;
   height: 100%;
   font-size: 1rem;
   border: none;
   background: var(--primary-color);
   padding: 12px;
-  margin-left: 12px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+  flex: 1;
+
+  @media (max-width: 370px) {
+    width: 100%;
+  }
 }
 
 .new-task-button:hover {
@@ -128,7 +139,7 @@ h4 {
   margin-bottom: 15px;
   background-color: var(--bg-third);
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: var(--radius);
   animation: fade 0.4s ease;
 }
 
@@ -140,7 +151,7 @@ h4 {
 .task-item i {
   background-color: var(--primary-color);
   padding: 12px;
-  border-radius: 5px;
+  border-radius: var(--radius);
   transition: 0.2s ease-in-out;
 }
 
