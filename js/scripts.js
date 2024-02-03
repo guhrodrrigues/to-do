@@ -69,10 +69,10 @@ if (inputElement)
 // Toastify
 const addTaskAlert = () => {
   Toastify({
-    text: "Tarefa adicionada",
+    text: "Added task",
     duration: 1500,
-    gravity: "top",
-    position: "right",
+    gravity: "bottom",
+    position: "center",
     stopOnFocus: true,
     backgroundColor: "#008000",
   }).showToast();
@@ -80,10 +80,10 @@ const addTaskAlert = () => {
 
 const deleteTaskAlert = () => {
   Toastify({
-    text: "Tarefa deletada",
+    text: "Deleted task",
     duration: 1500,
-    gravity: "top",
-    position: "right",
+    gravity: "bottom",
+    position: "center",
     stopOnFocus: true,
     backgroundColor: "#ff0000",
   }).showToast();
