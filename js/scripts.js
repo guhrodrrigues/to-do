@@ -72,7 +72,7 @@ const addTaskAlert = () => {
     text: "Added task",
     duration: 1500,
     gravity: "bottom",
-    position: "center",
+    position: "right",
     stopOnFocus: true,
     backgroundColor: "#008000",
   }).showToast();
@@ -83,7 +83,7 @@ const deleteTaskAlert = () => {
     text: "Deleted task",
     duration: 1500,
     gravity: "bottom",
-    position: "center",
+    position: "right",
     stopOnFocus: true,
     backgroundColor: "#ff0000",
   }).showToast();
@@ -96,6 +96,7 @@ const handleDeleteClick = (taskItemContainer, taskContent) => {
   // Loop through tasks
   for (const task of tasks) {
     const currentTaskIsBeingClicked = task.firstChild.isSameNode(taskContent);
+
     if (currentTaskIsBeingClicked) {
       taskItemContainer.remove();
       deleteTaskAlert();

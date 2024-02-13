@@ -3,17 +3,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 :root {
-  --bg-primary: #232328;
-  --bg-secondary: #2b2b30;
-  --bg-third: #37373c;
-  --primary-color: #b25f31;
-  --secondary-color: #cb7845;
+  --bg-primary: #fff;
+  --primary-color: #000;
   --text-color: #fff;
-  --error-color: #ff0000;
+  --red-color: rgba(255, 0, 0);
+  --red-color-foreground: rgba(255, 0, 0, 0.1);
   --container-radius: 15px;
   --radius: 7px;
 }
@@ -24,6 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fade 0.6s ease;
 }
 
 body .toastify {
@@ -40,28 +39,25 @@ body .toastify {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 3px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
-  border: 3.5px solid var(--bg-primary);
+  background: #ccc;
+  border: 3.5px solid #ccc;
   border-radius: var(--radius);
 }
 
 /* To-do */
 .container {
-  padding: 30px 15px;
   border-radius: var(--container-radius);
+  max-width: 400px;
   min-height: 600px;
-  max-width: 500px;
   width: 100%;
   margin: 0 1.5rem;
-  background-color: var(--bg-secondary);
   display: flex;
   flex-direction: column;
   text-align: center;
-  animation: fade 0.6s ease;
 }
 
 h4 {
@@ -70,53 +66,39 @@ h4 {
 }
 
 .new-task-container {
-  padding: 30px 20px;
   display: flex;
-  align-items: center;
+  align-items: stretch;
   user-select: none;
   gap: 0.7rem;
-
-  @media (max-width: 370px) {
-    flex-direction: column;
-  }
+  height: 45px;
 }
 
 .new-task-container input {
   width: 100%;
-  max-width: 350px;
   font-size: 1rem;
-  border: 2px solid transparent;
-  background: var(--bg-third);
-  color: var(--text-color);
+  padding: 0 12px;
   border-radius: var(--radius);
-  padding: 12px;
   font-weight: 500;
+  border: 2px solid transparent;
 }
 
 .new-task-container input:focus {
   outline: none;
-  border: 2px solid var(--primary-color);
+  border: 2px solid #ccc;
 }
 
 .new-task-button {
   border-radius: var(--radius);
-  font-weight: 500;
+  font-weight: 600;
   height: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   border: none;
   background: var(--primary-color);
-  padding: 12px;
+  color: var(--text-color);
+  padding: 6px 20px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
   flex: 1;
-
-  @media (max-width: 370px) {
-    width: 100%;
-  }
-}
-
-.new-task-button:hover {
-  background: var(--secondary-color);
 }
 
 .tasks-container {
@@ -124,45 +106,75 @@ h4 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0px 20px;
   overflow: auto;
-  max-height: 500px;
-  height: 100%;
+  max-height: 400px;
+  margin-top: 24px;
 }
 
 .task-item {
   display: flex;
   width: 100%;
-  max-width: 463px;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
-  background-color: var(--bg-third);
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius);
-  animation: fade 0.4s ease;
+  padding: 12px 12px;
+  border: 2px solid transparent;
+  animation: fade 0.6s ease;
+  border: 2px solid transparent;
+  border-bottom: 1px solid #ddd;
 }
 
 .task-item p {
-  color: var(--text-color);
   font-weight: 500;
 }
 
 .task-item i {
-  background-color: var(--primary-color);
-  padding: 12px;
+  color: var(--red-color);
+  background: var(--red-color-foreground);
+  padding: 8px;
   border-radius: var(--radius);
   transition: 0.2s ease-in-out;
 }
 
 .task-item i:hover {
   cursor: pointer;
-  background-color: var(--secondary-color);
+}
+
+footer {
+  position: absolute;
+  bottom: 16px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: #888;
+}
+
+.footer-content img {
+  width: 30px;
+  border-radius: 100%;
+  user-select: none;
+}
+
+.footer-content p > a {
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.footer-content p > a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 /* Utilities */
 .error {
-  border: 2px solid var(--error-color) !important;
+  border: 2px solid var(--red-color) !important;
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
@@ -170,7 +182,7 @@ h4 {
 }
 
 .error::placeholder {
-  color: var(--error-color);
+  color: var(--red-color);
 }
 
 @keyframes shake {
@@ -198,12 +210,10 @@ h4 {
 
 @keyframes fade {
   from {
-    opacity: 0.4;
-    transform: translateY(-10px);
+    opacity: 0;
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
 
